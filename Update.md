@@ -130,6 +130,12 @@ after python/perl upgrade:
 perl-cleaner --modules
 python-updater
 ````
+plenty of unresolvable dependencies, perl-cleaner didn't work? (of course it didn't:)
+````
+emerge --tree --verbose --verbose-conflicts --oneshot dev-lang/perl $(qlist -IC 'virtual/perl-*') $(qlist -IC 'dev-perl/*')	
+perl-cleaner --all
+````
+
 
 *Run the following command under each regular user's account*
 ##### Regenerate the main menu for XFCE WM (or "-e" for e17, "-k" for KDE)
